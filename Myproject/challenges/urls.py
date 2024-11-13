@@ -1,7 +1,8 @@
 from django.urls import path
-from . import views
+from .views import saturday,sunday
 
 
 urlpatterns = [
-    path('edit-profile/',views.index),
+    path('saturday/',saturday),
+    path('sunday/',sunday)
 ]

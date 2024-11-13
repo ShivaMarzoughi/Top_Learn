@@ -3,5 +3,9 @@ from django.http import HttpResponse
 
 
 
-def index(request):
-    return HttpResponse('this is django course')
+def saturday(request):
+    return HttpResponse('this is satueday')
+
+
+def sunday(request):
+    return HttpResponse('this is sunday')

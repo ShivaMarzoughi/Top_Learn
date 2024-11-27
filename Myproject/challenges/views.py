@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseNotFound,HttpResponseRedirect
 from django.urls import reverse
-
+from django.template.loader import render_to_string
 
 def saturday(request):
     return HttpResponse('this is satueday')
@@ -53,7 +53,8 @@ def dynamic_days(request,day):
     # day ما اینجا همون کلید دیتابیس ما هس
     day_data=days.get(day)
     if day_data is not None:
-        response_data=f'<h1> Day: {day}, Description: {day_data} </h1>'
+        # response_data=f'<h1> Day: {day}, Description: {day_data} </h1>'
+        response_data=render_to_string('challenges/challenge.html')
         return HttpResponse(response_data)
     else:
         return HttpResponseNotFound('day does not existe')

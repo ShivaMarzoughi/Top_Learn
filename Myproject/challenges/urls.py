@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import saturday,sunday,dynamic_days,dynamic_days_by_number
+from .views import saturday,sunday,dynamic_days,dynamic_days_by_number,days_list
 
 # ترتیب قرار گرفتن این لینک ها مهم
 urlpatterns = [
@@ -11,6 +11,7 @@ urlpatterns = [
     # path('<day>/<description>/', dynamic_days),
     # درست تر مینویسیم
     path('<int:day>/',dynamic_days_by_number),
-    path('<str:day>/', dynamic_days,name='days-of-weeks')
+    path('<str:day>/', dynamic_days,name='days-of-weeks'),
+    path('',days_list)
 
 ]

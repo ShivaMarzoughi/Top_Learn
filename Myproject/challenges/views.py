@@ -53,7 +53,26 @@ def dynamic_days(request,day):
     # day ما اینجا همون کلید دیتابیس ما هس
     day_data=days.get(day)
     if day_data is not None:
-        return HttpResponse(f"Day: {day}, Description: {day_data}")
+        response_data=f'<h1> Day: {day}, Description: {day_data} </h1>'
+        return HttpResponse(response_data)
     else:
         return HttpResponseNotFound('day does not existe')
 
+
+def days_list(request):
+    # به صورت داینامیک میسازیم
+    days_list=list(days.keys())
+    list_item=''
+    for day in days_list:
+        url_path=reverse('days-of-week',args=[day])
+        list_item += f'<li> <a href="{url_path}">{day}</a> </li>'
+
+    content =f'<ul> {list_item} </ul>'
+
+    # content ='''
+    #     <ul> 
+    #      <li> saturday </li>
+    #     </ul>
+
+    # '''
+    return HttpResponse(content)

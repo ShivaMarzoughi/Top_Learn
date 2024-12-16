@@ -82,3 +82,10 @@ def dynamic_days(request,day):
 
 #     # '''
 #     return HttpResponse(content)
+# خودم نوشتم 😎
+def days_list(request):
+    days_data=list(days.keys())
+    context={
+        'days':days_data
+    }
+    return render (request,'challenges/index.html',context)

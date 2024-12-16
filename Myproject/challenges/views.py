@@ -57,7 +57,8 @@ def dynamic_days(request,day):
         # response_data=render_to_string('challenges/challenge.html')
         # return HttpResponse(response_data)
         context={
-            'data':day_data
+            'data':day_data,
+            'day':day.upper()
         }
         return render(request,'challenges/challeng.html',context)
     else:

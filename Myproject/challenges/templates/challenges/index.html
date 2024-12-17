@@ -8,8 +8,15 @@
 <body>
     <ul>
         {% for i in days %}
-            <li>{{i}}</li>
+            <!-- <li><a href="/days/{{i}}">{{day | title}} </a></li> -->
+
+            <li><a href="{% url 'days-of-weeks' i %}">{{i | title}} </a></li>
+            
         {% endfor %}
+
+
+
+
 
     </ul>
 </body>

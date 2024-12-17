@@ -52,17 +52,17 @@ days={
 def dynamic_days(request,day):
     # day ما اینجا همون کلید دیتابیس ما هس
     day_data=days.get(day)
-    if day_data is not None:
+    # if day_data is not None:
         # response_data=f'<h1> Day: {day}, Description: {day_data} </h1>'
         # response_data=render_to_string('challenges/challenge.html')
         # return HttpResponse(response_data)
-        context={
+    context={
             'data':day_data,
-            'day':day.upper()
+            'day':day
         }
-        return render(request,'challenges/challeng.html',context)
-    else:
-        return HttpResponseNotFound('day does not existe')
+    return render(request,'challenges/challeng.html',context)
+    # else:
+    #     return HttpResponseNotFound('day does not existe')
 
 
 # def days_list(request):

@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django template file</title>
-    <h2 style="color: brown;">
+    <!-- <h2 style="color: brown;">
         {{data|title}}
-    </h2>
+    </h2> -->
+
+    {% if day_data is not None %}
+    <h2>{{ day_data }}</h2>
+    {% else %}
+    <p>there is no data </p>
+    {% endif %}
 </head>
 <body>
     

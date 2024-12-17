@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django template file</title>
+{% extends 'base.html' %}
+
+{% block page_title%} Django template file{% endblock %}
+
+{% block content %}
     <!-- <h2 style="color: brown;">
         {{data|title}}
     </h2> -->
 
-    {% if day_data is not None %}
-    <h2>{{ day_data }}</h2>
+    {% if data is not None %}
+        <h2>{{ data }}</h2>
     {% else %}
-    <p>there is no data </p>
+        <p>there is no data </p>
     {% endif %}
-</head>
-<body>
-    
-</body>
-</html>
+{% endblock%}

@@ -12,6 +12,6 @@ urlpatterns = [
     # درست تر مینویسیم
     # path('<int:day>/',dynamic_days_by_number),
     path('<str:day>/', dynamic_days,name='days-of-weeks'),
-    path('',days_list)
+    path('',days_list,name='days_list')
 
 ]

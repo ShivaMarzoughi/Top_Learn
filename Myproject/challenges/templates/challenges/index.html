@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+{% block content %}    
+{% include 'challenges/includes/header.html' with active_page='days list' %}
+
     <ul>
         {% for i in days %}
             <!-- <li><a href="/days/{{i}}">{{day | title}} </a></li> -->
@@ -19,5 +22,7 @@
 
 
     </ul>
+
+{% endblock%}
 </body>
 </html>
